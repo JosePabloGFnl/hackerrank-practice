@@ -20,18 +20,7 @@ SELECT
 FROM OCCUPATIONS
 ORDER BY NAME;
 
-SELECT 'There are a total of ' || COUNT(*) || ' doctors.' 
+SELECT 'There are a total of ' || COUNT(*) || ' ' || LOWER(OCCUPATION) || 's.'
 FROM OCCUPATIONS
-WHERE OCCUPATION = 'Doctor';
-
-SELECT 'There are a total of ' || COUNT(*) || ' actors.' 
-FROM OCCUPATIONS
-WHERE OCCUPATION = 'Actor';
-
-SELECT 'There are a total of ' || COUNT(*) || ' singers.' 
-FROM OCCUPATIONS
-WHERE OCCUPATION = 'Singer';
-
-SELECT 'There are a total of ' || COUNT(*) || ' professors.' 
-FROM OCCUPATIONS
-WHERE OCCUPATION = 'Professor';
+GROUP BY OCCUPATION
+ORDER BY COUNT(*);
